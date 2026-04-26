@@ -1,7 +1,5 @@
-
 # Project Structure
 
-```
 CAPSTONE_INVENTORY
 │
 ├── .streamlit
@@ -48,7 +46,6 @@ CAPSTONE_INVENTORY
 │
 ├── requirements.txt
 └── README.md
-```
 
 ---
 
@@ -67,7 +64,6 @@ The project was implemented using the following tools and libraries:
 
 ---
 
-
 # How to Run the Project
 
 Follow the steps below to run the complete system.
@@ -78,9 +74,11 @@ Follow the steps below to run the complete system.
 
 From the project root directory run:
 
-```
+Windows:
 pip install -r requirements.txt
-```
+
+macOS / Linux:
+pip3 install -r requirements.txt
 
 ---
 
@@ -88,15 +86,15 @@ pip install -r requirements.txt
 
 Run the data processing script:
 
-```
+Windows:
 python src/data_processing.py
-```
+
+macOS / Linux:
+python3 src/data_processing.py
 
 This script cleans the dataset and generates:
 
-```
 data/processed/daily_demand.csv
-```
 
 ---
 
@@ -104,15 +102,15 @@ data/processed/daily_demand.csv
 
 Run the forecasting module:
 
-```
+Windows:
 python src/forecasting.py
-```
+
+macOS / Linux:
+python3 src/forecasting.py
 
 This script trains the forecasting model and generates:
 
-```
 outputs/tables/forecast_results.csv
-```
 
 ---
 
@@ -120,16 +118,16 @@ outputs/tables/forecast_results.csv
 
 Run the reorder logic:
 
-```
+Windows:
 python src/reorder_logic.py
-```
+
+macOS / Linux:
+python3 src/reorder_logic.py
 
 This script calculates inventory decisions and generates:
 
-```
 outputs/tables/reorder_summary.csv
 outputs/tables/warehouse_summary.csv
-```
 
 ---
 
@@ -137,11 +135,15 @@ outputs/tables/warehouse_summary.csv
 
 After the output files are generated, start the dashboard:
 
-```
+Windows / macOS / Linux:
 streamlit run dashboards/Home.py
-```
 
-The dashboard will open in your browser and display:
+If streamlit is not recognized:
+
+macOS / Linux:
+python3 -m streamlit run dashboards/Home.py
+
+The dashboard will open in the browser and display:
 
 * warehouse inventory KPIs
 * product-level reorder alerts
@@ -156,8 +158,8 @@ The notebooks folder contains the analytical workflow used during development.
 
 | Notebook                  | Purpose                                 |
 | ------------------------- | --------------------------------------- |
-| `01_eda.ipynb`            | data exploration and demand aggregation |
-| `02_forecasting.ipynb`    | demand forecasting experiments          |
-| `03_reorder_system.ipynb` | reorder logic testing                   |
+| 01_eda.ipynb              | data exploration and demand aggregation |
+| 02_forecasting.ipynb      | demand forecasting experiments          |
+| 03_reorder_system.ipynb   | reorder logic testing                   |
 
-These notebooks are mainly used for **analysis and documentation**, while the system itself runs using the **Python scripts in the `src` folder**.
+These notebooks are mainly used for analysis and documentation, while the system itself runs using the Python scripts in the src folder.
