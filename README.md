@@ -1,5 +1,5 @@
 # Project Structure
-
+```
 CAPSTONE_INVENTORY
 │
 ├── .streamlit
@@ -46,7 +46,7 @@ CAPSTONE_INVENTORY
 │
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 # Technologies Used
