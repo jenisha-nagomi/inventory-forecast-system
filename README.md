@@ -1,4 +1,5 @@
 # Project Structure
+
 ```
 CAPSTONE_INVENTORY
 │
@@ -47,119 +48,123 @@ CAPSTONE_INVENTORY
 ├── requirements.txt
 └── README.md
 ```
+
 ---
 
 # Technologies Used
 
-The project was implemented using the following tools and libraries:
-
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* SciPy
-* Statsmodels (ARIMA)
-* Streamlit
-* Altair
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- SciPy  
+- Statsmodels (ARIMA)  
+- Streamlit  
+- Altair  
 
 ---
 
 # How to Run the Project
 
-Follow the steps below to run the complete system.
-
----
-
 ## 1. Install dependencies
 
-From the project root directory run:
-
 Windows:
+```
 pip install -r requirements.txt
+```
 
 macOS / Linux:
+```
 pip3 install -r requirements.txt
+```
 
 ---
 
 ## 2. Process the raw dataset
 
-Run the data processing script:
-
 Windows:
+```
 python src/data_processing.py
+```
 
 macOS / Linux:
+```
 python3 src/data_processing.py
+```
 
-This script cleans the dataset and generates:
-
+Output:
+```
 data/processed/daily_demand.csv
+```
 
 ---
 
 ## 3. Run demand forecasting
 
-Run the forecasting module:
-
 Windows:
+```
 python src/forecasting.py
+```
 
 macOS / Linux:
+```
 python3 src/forecasting.py
+```
 
-This script trains the forecasting model and generates:
-
+Output:
+```
 outputs/tables/forecast_results.csv
+```
 
 ---
 
 ## 4. Run reorder calculations
 
-Run the reorder logic:
-
 Windows:
+```
 python src/reorder_logic.py
+```
 
 macOS / Linux:
+```
 python3 src/reorder_logic.py
+```
 
-This script calculates inventory decisions and generates:
-
+Outputs:
+```
 outputs/tables/reorder_summary.csv
 outputs/tables/warehouse_summary.csv
+```
 
 ---
 
 ## 5. Launch the dashboard
 
-After the output files are generated, start the dashboard:
-
 Windows / macOS / Linux:
+```
 streamlit run dashboards/Home.py
+```
 
 If streamlit is not recognized:
-
-macOS / Linux:
+```
 python3 -m streamlit run dashboards/Home.py
+```
 
-The dashboard will open in the browser and display:
+The dashboard will display:
 
-* warehouse inventory KPIs
-* product-level reorder alerts
-* demand forecast trends
-* inventory risk indicators
+- warehouse inventory KPIs  
+- product-level reorder alerts  
+- demand forecast trends  
+- inventory risk indicators  
 
 ---
 
 # Notebooks
 
-The notebooks folder contains the analytical workflow used during development.
+| Notebook | Purpose |
+|----------|--------|
+| 01_eda.ipynb | Data exploration and demand aggregation |
+| 02_forecasting.ipynb | Forecasting experiments |
+| 03_reorder_system.ipynb | Reorder logic testing |
 
-| Notebook                  | Purpose                                 |
-| ------------------------- | --------------------------------------- |
-| 01_eda.ipynb              | data exploration and demand aggregation |
-| 02_forecasting.ipynb      | demand forecasting experiments          |
-| 03_reorder_system.ipynb   | reorder logic testing                   |
-
-These notebooks are mainly used for analysis and documentation, while the system itself runs using the Python scripts in the src folder.
+These notebooks are used for analysis and documentation, while the system runs using the Python scripts in the `src` folder.
